@@ -1,0 +1,111 @@
+node is a VH engine wich was taken out of google chrome
+.gitignore is the stuff we dont want to have in version control
+
+- transpilation: with node, a old browser can use modern java 
+- bundling: get all the components and bundle them together => much faster
+
+1. $npm install -g create-react-app
+
+2. to create a new react-app
+   - cd into Folder 
+   - then $create-react-app nameOfYourApp
+   - bsp: $create-react-app better-playlists
+
+3. cd into the directory u created and then $npm start
+
+4.react.js is using a mix of java, html and css
+  wich is calles JSX (see more https://reactjs.org/docs/introducing-jsx.html)
+  - allowes to use variables inside of html
+    like {variable} // to define this varibale:
+    let variable =  'App Name'
+    within {} you can put javascript code
+  - instead of html class u say className
+  - inlineStyle like style="color: 'green'"  
+    is written as style={{color: green}};
+    with the declared variable, let green = 'green'
+    so u are passing in objects
+
+    or like let headerStyle = {color: 'green', 'font-size': '50px}
+    <h1 style={headerSytle} Hello </h1>
+
+5. to create a new react class
+
+class App extends Component {
+  render() {
+    return (
+     ----FIlL with JSX---    
+    );
+  }
+}
+
+6. 
+let defaultStyle = {
+  color: '#ffff'
+}
+add defualtStyle like: styll={{...defaultStyle, xxx:xxx, xxx:xxx}}
+
+7. Add to Github
+
+gives you version control !
+workes like a cloud 
+
+
+to push :
+git init
+git add .
+git commit -m "initial commit"
+git add origin master "https://github.com/timebasher/better-playlist.git"
+git push -u origin master
+
+
+8. applying to heroku
+
+https://github.com/mars/create-react-app-buildpack
+heroku create $muchobetterplaylist--buildpack https://github.com/mars/create-react-app-buildpack.git
+
+git push heroku master
+heroku open
+
+
+9. connect to spotify
+
+do it with cmd !
+
+git clone https://github.com/mpj/oauth-bridge-template
+
+this assumes that u a running a react server on port 3000
+
+npm install
+
+SET SPOTIFY_CLIENT_ID=0afcd528d1554796a07d4bfd74f9f0d8
+SET SPOTIFY_CLIENT_SECRET=2e192e65dd5043cc8d7f498352f34a6b
+npm start
+
+10. create new Heroku server 
+
+and attach it with the spotify oAuth server
+
+
+heroku create mybackend
+heroku config:set SPOTIFY_CLIENT_ID=0afcd528d1554796a07d4bfd74f9f0d8
+heroku config:set SPOTIFY_CLIENT_SECRET=2e192e65dd5043cc8d7f498352f34a6b
+heroku config:set REDIRECT_URI=https://mybackend32423.herokuapp.com/callback
+heroku config:set FRONTEND_URI=https://XXXX(your app)
+https://still-earth-92993.herokuapp.com/
+git push heroku master
+
+got to backendULR/login
+
+11.fetch from spotify api 
+
+fetch('https://api.spotify.com/v1/..., {
+  headers : {'Authorization'. 'Bearer ' + accessToken}
+}).then( response => response.json())
+.then(data => console.log(data))
+}
+
+
+#13 19 minuten
+
+
+
