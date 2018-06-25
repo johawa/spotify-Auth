@@ -5,28 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
+
+
     <title>Document</title>
 </head>
 
 <body>
-    <h2>COVERFLOW FOR SPOTIFY</h2>
+    <h2> COVERFLOW SPOTIFY</h2>
 
+    <div class="background-svg">
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg width="4000px" height="1590px" viewBox="0 0 4000 1590" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="background: #242426;">
+            <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+            <title>lisa-hero-desktop-bg</title>
+            <desc>Created with Sketch.</desc>
+            <defs>
+                <path d="M3830.03713,800.961334 L3917.19263,751.132695 L2603.38301,0 L1289.57334,751.132695 L1459.53621,848.304057 L1372.38071,898.132695 L2686.19038,1649.26542 L4000,898.132695 L3830.03713,800.961334 Z"
+                    id="path-1"></path>
+                <rect id="path-3" x="3773.7945" y="747" width="127.240596" height="219"></rect>
+                <polygon id="path-5" points="4252.55646 -2755 4252.55646 633.000032 1289.57334 2327 1289.57334 -1060.99994"></polygon>
+            </defs>
+            <g id="/dynasty" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="lisa-hero-desktop-bg">
+                    <g id="0" transform="translate(0.000000, -131.000000)">
+                        <g id="bg" transform="translate(0.000000, 131.000000)">
+                            <path d="M2540.46379,800.961334 L2627.61929,751.132695 L1313.80967,0 L0,751.132695 L169.962872,848.304057 L82.8073719,898.132695 L1396.61704,1649.26542 L2710.42666,898.132695 L2540.46379,800.961334 Z"
+                                id="Combined-Shape" fill-rule="nonzero" transform="translate(1355.213330, 824.632710) scale(-1, 1) translate(-1355.213330, -824.632710) "></path>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Combined-Shape" fill-rule="nonzero"></g>
+                            <polygon id="path16754-path" fill="#101011" mask="url(#mask-2)" points="1459.72539 848 1459.72539 1504.43927 885.634941 1832.65889 885.634941 1176.21964"></polygon>
+                            <polygon id="path16754-path" fill-opacity="0.5" fill="#101011" mask="url(#mask-2)" points="4252.55646 -2755 4252.55646 633.000032 1289.57334 2327 1289.57334 -1060.99994"></polygon>
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <g id="clip-mask"></g>
+                            <mask id="mask-6" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <g id="path16754-path"></g>
+                            <polygon id="path16754-path" fill="#101011" mask="url(#mask-6)" transform="translate(4117.391098, 1293.329445) scale(-1, 1) translate(-4117.391098, -1293.329445) "
+                                points="4404.43632 801 4404.43632 1457.43927 3830.34587 1785.65889 3830.34587 1129.21964"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+
+
+    </div>
+
+    <cavans>
+        <script src="sketch.js"></script>
+    </cavans>
 
     <div class="svg-wrapper">
         <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
             <rect class="shape" height="60" width="320" />
         </svg>
-        <a href="/login" >
-            <div class="text">LOGIN</div>
+        <a href="/login">
+            <div class="text">Login with Spotify</div>
         </a>
     </div>
+
+
 
 
 
     <style>
         html,
         body {
-            background: #191414;
+            font-family: 'Montserrat', sans-serif;
             height: 100%;
             overflow: hidden;
             text-align: center;
@@ -39,11 +93,41 @@
             line-height: 32px;
         }
 
+        canvas {
+            display: block;
+            position: absolute;
+
+            left: 51%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            /* -webkit-clip-path: polygon(34% 0%, 100% 0, 100% 100%, 2.7% 100%); */
+            clip-path: polygon(520px 0px, 100% 0, 100% 100%, 43px 100%);
+
+        }
+
+        .h2-span {
+            position: absolute;
+            transform: rotate(-27deg);
+            z-index: 100;
+        }
+
+        .background-svg {
+            display: block;
+            position: absolute;
+            top: -300px;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            z-index: -1;
+        }
+
+
+
         .svg-wrapper {
             height: 60px;
             margin: 0 auto;
             position: relative;
-            top: 50%;
+            top: 62%;
             transform: translateY(-50%);
             width: 320px;
         }
@@ -53,7 +137,7 @@
             stroke-dasharray: 140 540;
             stroke-dashoffset: -474;
             stroke-width: 8px;
-            stroke: #1db954;
+            stroke: #07b5e3;
         }
 
         a {
@@ -62,12 +146,11 @@
 
         .text {
             color: #fff;
-            font-family: 'Roboto Condensed';
-            font-size: 22px;
-            letter-spacing: 8px;
+            font-size: 21px;
+            letter-spacing: 2px;
             line-height: 32px;
             position: relative;
-            top: -48px;
+            top: -51px;
             text-decoration: none;
         }
 
