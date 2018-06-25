@@ -13,7 +13,7 @@ let move = 0;
 var img;
 
 function preload() {
-	img = loadImage("../assets/picutre.png");
+	img = loadImage("https://raw.githubusercontent.com/timebasher/spotify-Auth/master/assets/picutre.png");
 }
 
 
