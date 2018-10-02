@@ -20,8 +20,7 @@ app.get("/login", function(req, res) {
         scope:
           "user-read-private user-read-email user-read-playback-state user-modify-playback-state streaming user-read-birthdate user-read-private user-read-recently-played",
         redirect_uri
-      })
-  + "?:embed=yes"
+      }) 
   );
 });
 
