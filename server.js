@@ -16,6 +16,7 @@ app.get("/login", function(req, res) {
     "https://accounts.spotify.com/authorize?" +
       querystring.stringify({
         response_type: "code",
+        X-Frame-Options: 'ALLOW-FROM https://johanneswalenta.herokuapp.com/',
         client_id: process.env.SPOTIFY_CLIENT_ID,       
         scope:
           "user-read-private user-read-email user-read-playback-state user-modify-playback-state streaming user-read-birthdate user-read-private user-read-recently-played",
