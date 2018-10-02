@@ -17,6 +17,7 @@ app.get("/login", function(req, res) {
       querystring.stringify({
         response_type: "code",
         client_id: process.env.SPOTIFY_CLIENT_ID,
+        X-Frame-Options: 'ALLOW-FROM http://localhost:3000/',
         scope:
           "user-read-private user-read-email user-read-playback-state user-modify-playback-state streaming user-read-birthdate user-read-private user-read-recently-played",
         redirect_uri
