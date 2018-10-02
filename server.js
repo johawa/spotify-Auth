@@ -13,7 +13,7 @@ app.get("/", function(req, res) {
 
 app.get("/login", function(req, res) {
   res.redirect(
-    "https://accounts.spotify.com/authorize?" + "?:embed=yes"
+    "https://accounts.spotify.com/authorize?" 
       querystring.stringify({
         response_type: "code",        
         client_id: process.env.SPOTIFY_CLIENT_ID,       
@@ -21,6 +21,7 @@ app.get("/login", function(req, res) {
           "user-read-private user-read-email user-read-playback-state user-modify-playback-state streaming user-read-birthdate user-read-private user-read-recently-played",
         redirect_uri
       })
+  + "?:embed=yes"
   );
 });
 
